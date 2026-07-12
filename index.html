@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Tooth Clinic | Modern Dental Care & Prosthodontic Centre</title>
+    <meta name="description" content="Welcome to The Tooth Clinic, New Delhi's premier dental clinic led by Prosthodontist Dr. Swastik Saini. Experience painless clinical treatments, whitening, and dental implants."/>
+    
+    <!-- TailWind CDN & Custom styles -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00355f",
+                        secondary: "#00696e",
+                        tertiary: "#2d3536",
+                        background: "#f9f9ff",
+                        "surface-low": "#f0f3ff",
+                        "surface-card": "#ffffff",
+                        "on-surface": "#111c2c",
+                        "on-surface-variant": "#42474f",
+                        outline: "#727780",
+                        gold: "#e6b400"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1.5rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <span class="material-symbols-outlined loader-tooth">dentistry</span>
+        <div class="loader-text">The Tooth Clinic</div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress-bar" class="scroll-progress"></div>
+
+    <!-- Navigation Header -->
+    <nav id="main-navbar" class="fixed top-0 left-0 right-0 h-20 border-b border-primary/10 z-40 sticky-nav flex items-center">
+        <div class="max-w-[1200px] w-full mx-auto px-6 md:px-12 flex justify-between items-center">
+            
+            <!-- Branding -->
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="material-symbols-outlined text-primary text-3xl group-hover:rotate-12 transition-transform duration-300" data-icon="dentistry">dentistry</span>
+                <div class="flex flex-col -space-y-1">
+                    <span class="text-xl font-extrabold text-primary uppercase tracking-tighter">The Tooth</span>
+                    <span class="text-xs font-semibold text-secondary tracking-widest uppercase">Clinic</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8 font-medium text-sm uppercase tracking-wider text-primary">
+                <a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#about-team" class="hover:text-secondary transition-colors duration-300">Our Specialist</a>
+                <a href="#about-clinic" class="hover:text-secondary transition-colors duration-300">Clinic Tour</a>
+                <a href="#reviews" class="hover:text-secondary transition-colors duration-300">Patient Stories</a>
+                <a href="#location" class="hover:text-secondary transition-colors duration-300">Find Us</a>
+            </div>
+
+            <!-- Call & Action Buttons -->
+            <div class="hidden md:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-primary font-semibold">
+                    <span class="material-symbols-outlined animate-bounce">call</span>
+                    <a href="tel:08700706766" class="hover:text-secondary transition-colors">087007 06766</a>
+                </div>
+                <a href="#booking-form-anchor" class="bg-primary hover:bg-primary/95 text-white px-6 py-2.5 rounded-lg font-bold text-sm uppercase tracking-wide transition-all shadow-md hover:shadow-lg">
+                    Book Now
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-primary focus:outline-none" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Slide Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between p-8 border-l border-primary/10 lg:hidden">
+        <div class="space-y-8">
+            <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-primary tracking-wide">NAVIGATION</span>
+                <button onclick="document.getElementById('mobile-menu-btn').click()" class="text-primary">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-6 font-semibold text-lg text-primary">
+                <a href="#services" class="hover:text-secondary transition-colors">Services</a>
+                <a href="#about-team" class="hover:text-secondary transition-colors">Our Specialist</a>
+                <a href="#about-clinic" class="hover:text-secondary transition-colors">Clinic Tour</a>
+                <a href="#reviews" class="hover:text-secondary transition-colors">Patient Stories</a>
+                <a href="#location" class="hover:text-secondary transition-colors">Find Us</a>
+            </div>
+        </div>
+        <div class="space-y-6">
+            <div class="flex items-center gap-3 text-primary font-bold">
+                <span class="material-symbols-outlined">call</span>
+                <a href="tel:08700706766">087007 06766</a>
+            </div>
+            <a href="#booking-form-anchor" class="w-full block text-center bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-lg uppercase tracking-wider shadow-md">
+                Book Appointment
+            </a>
+        </div>
+    </div>
+
+    <!-- 1. Animated Hero Section -->
+    <header id="hero-section" class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden min-h-[90vh] flex items-center bg-cover bg-center bg-no-repeat" style="background-image: url('storefront.png');">
+        <!-- Dark Blue Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/50 z-0"></div>
+        
+        <div class="max-w-[1200px] mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center w-full relative z-10">
+            
+            <!-- Left Info column -->
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Open/Closed Live Status Badge -->
+                <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full shadow-sm border border-white/10">
+                    <span id="clinic-status-dot" class="pulse-dot open"></span>
+                    <span id="clinic-status-text" class="text-sm font-semibold text-white">Checking timing...</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.35]">
+                    Exceptional <br/><span class="text-[#0cd4b6]">Dental Care</span>
+                </h1>
+                
+                <p class="text-lg text-white/90 max-w-xl leading-relaxed">
+                    With our team of experienced dentists and state-of-the-art technology, we deliver comprehensive treatments in a comfortable and welcoming environment.
+                </p>
+
+                <!-- Value Props Ticks -->
+                <div class="grid grid-cols-2 gap-4 max-w-lg pt-4 text-white/90 font-medium text-sm md:text-base">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#78f5fc] font-bold">verified</span>
+                        <span>Clinical Excellence</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#78f5fc] font-bold">verified</span>
+                        <span>100% Painless Tech</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#78f5fc] font-bold">verified</span>
+                        <span>Silver Medalist Doctor</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#78f5fc] font-bold">verified</span>
+                        <span>Sterilized Standards</span>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                    <a href="#booking-form-anchor" class="bg-secondary hover:bg-secondary/95 text-white text-center px-8 py-4 rounded-lg font-extrabold uppercase tracking-wide transition-all shadow-xl hover:-translate-y-0.5">
+                        Book Appointment
+                    </a>
+                    <a href="tel:08700706766" class="border-2 border-white/40 text-white hover:bg-white/5 text-center px-8 py-4 rounded-lg font-extrabold uppercase tracking-wide transition-all flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">call</span>
+                        Call: 087007 06766
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Booking column -->
+            <div id="booking-form-anchor" class="lg:col-span-5 relative">
+                <!-- Subtle Backdrop shadow glow -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-3xl blur-xl opacity-20 animate-pulse"></div>
+                
+                <div class="relative glass-panel rounded-3xl p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-primary text-center mb-6">Schedule Visit</h3>
+                    
+                    <!-- Steps Form -->
+                    <form id="appointment-form" class="space-y-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-primary uppercase mb-2">Full Name *</label>
+                                <input id="booking-name" class="w-full bg-background border border-primary/10 rounded-lg p-3.5 text-on-surface placeholder:text-outline/50 cursor-not-allowed" placeholder="Enter full name" type="text" disabled/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-primary uppercase mb-2">Phone Number *</label>
+                                <div class="flex items-center gap-2 bg-background border border-primary/10 rounded-lg p-3.5 cursor-not-allowed">
+                                    <span class="text-base">🇮🇳</span>
+                                    <span class="text-on-surface-variant font-medium text-sm border-r pr-2 border-primary/10">+91</span>
+                                    <input id="booking-phone" class="w-full border-none p-0 focus:ring-0 text-on-surface placeholder:text-outline/50 text-sm font-medium bg-transparent cursor-not-allowed" placeholder="10-digit number" type="tel" disabled/>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-primary uppercase mb-2">Choose Treatment *</label>
+                                <select id="booking-service" class="w-full bg-background border border-primary/10 rounded-lg p-3.5 text-on-surface cursor-not-allowed" disabled>
+                                    <option value="" disabled selected>Select Dental Service</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Action button -->
+                        <div class="pt-2">
+                            <button type="button" class="w-full bg-slate-400 text-white font-bold py-3.5 rounded-lg text-sm uppercase tracking-wider cursor-not-allowed opacity-75 shadow-md" disabled>
+                                Booking Disabled in Demo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- 2. Features/Value Prop section -->
+    <section class="bg-background py-16 px-6 reveal-on-scroll">
+        <div class="max-w-[1200px] mx-auto bg-primary rounded-3xl py-12 px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white shadow-xl">
+            <div class="space-y-1">
+                <div class="text-4xl md:text-5xl font-extrabold text-secondary-fixed">6+</div>
+                <div class="text-xs uppercase tracking-widest text-surface-container-high opacity-85">Years Experience</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-4xl md:text-5xl font-extrabold text-secondary-fixed">1,000+</div>
+                <div class="text-xs uppercase tracking-widest text-surface-container-high opacity-85">Happy Patients</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-4xl md:text-5xl font-extrabold text-secondary-fixed">15+</div>
+                <div class="text-xs uppercase tracking-widest text-surface-container-high opacity-85">Dental Services</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-4xl md:text-5xl font-extrabold text-secondary-fixed">4.9/5</div>
+                <div class="text-xs uppercase tracking-widest text-surface-container-high opacity-85">Rated on Google</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Available Treatments Section -->
+    <section id="services" class="py-20 bg-white border-y border-primary/5 reveal-on-scroll">
+        <div class="max-w-[1200px] mx-auto px-6">
+            
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary">Advanced Clinical Treatments</h2>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded-full"></div>
+                <p class="text-on-surface-variant max-w-xl mx-auto">
+                    We combine systematic medical diagnosis with round-the-clock clinical care protocols for dental emergencies and implants.
+                </p>
+            </div>
+
+            <!-- Row 1: Two Large Cards (Basic & Aesthetic) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-in">
+                <!-- Card 1: Basic Dental Care -->
+                <div class="bg-white rounded-3xl p-8 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-6 min-h-[240px]">
+                    <div class="space-y-4 flex-1">
+                        <h3 class="text-2xl font-extrabold text-primary">Basic Dental Care</h3>
+                        <ul class="text-sm space-y-2 text-on-surface-variant font-medium list-disc list-inside">
+                            <li>Teeth Cleaning</li>
+                            <li>Dental Checkup</li>
+                            <li>Preventive Dentistry</li>
+                            <li>Bleeding Gums Treatment</li>
+                        </ul>
+                    </div>
+                    <div class="w-1/3 flex justify-end">
+                        <img src="real_basic_care.jpg" alt="Basic Dental Care" class="w-full max-h-[140px] object-contain blend-image"/>
+                    </div>
+                </div>
+
+                <!-- Card 2: Aesthetic Care -->
+                <div class="bg-white rounded-3xl p-8 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-6 min-h-[240px]">
+                    <div class="space-y-4 flex-1">
+                        <h3 class="text-2xl font-extrabold text-primary">Aesthetic Care</h3>
+                        <ul class="text-sm space-y-2 text-on-surface-variant font-medium list-disc list-inside">
+                            <li>Veneers</li>
+                            <li>Smile Design</li>
+                            <li>Teeth Whitening</li>
+                            <li>Teeth Reshaping</li>
+                            <li>Smile Makeovers</li>
+                        </ul>
+                    </div>
+                    <div class="w-1/3 flex justify-end">
+                        <img src="real_aesthetic_care.jpg" alt="Aesthetic Care" class="w-full max-h-[140px] object-contain blend-image"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Grid of 6 Smaller Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 animate-fade-in">
+                <!-- Card 3: Tooth Repair -->
+                <div class="service-hover-card bg-white rounded-3xl p-6 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-4 min-h-[200px] cursor-pointer">
+                    <h3 class="card-title-text text-primary">Tooth Repair</h3>
+                    <div class="card-content-wrapper flex flex-row justify-between items-center w-full gap-4">
+                        <div class="space-y-3 flex-1 pt-8">
+                            <ul class="text-xs space-y-1.5 text-on-surface-variant font-medium list-disc list-inside">
+                                <li>Dental Fillings</li>
+                                <li>Conservative Dentistry</li>
+                                <li>Root Canal Treatment</li>
+                            </ul>
+                        </div>
+                        <div class="w-2/5 flex justify-end pt-8">
+                            <img src="real_tooth_repair.png" alt="Tooth Repair" class="w-full max-h-[100px] object-contain blend-image"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Tooth Replacement -->
+                <div class="service-hover-card bg-white rounded-3xl p-6 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-4 min-h-[200px] cursor-pointer">
+                    <h3 class="card-title-text text-primary">Tooth Replacement</h3>
+                    <div class="card-content-wrapper flex flex-row justify-between items-center w-full gap-4">
+                        <div class="space-y-3 flex-1 pt-8">
+                            <ul class="text-xs space-y-1.5 text-on-surface-variant font-medium list-disc list-inside">
+                                <li>Crowns & Bridges</li>
+                                <li>Complete Dentures</li>
+                                <li>Partial Dentures</li>
+                                <li>Dental Implants</li>
+                            </ul>
+                        </div>
+                        <div class="w-2/5 flex justify-end pt-8">
+                            <img src="real_tooth_replacement.png" alt="Tooth Replacement" class="w-full max-h-[100px] object-contain blend-image"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Teeth Alignment -->
+                <div class="service-hover-card bg-white rounded-3xl p-6 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-4 min-h-[200px] cursor-pointer">
+                    <h3 class="card-title-text text-primary">Teeth Alignment</h3>
+                    <div class="card-content-wrapper flex flex-row justify-between items-center w-full gap-4">
+                        <div class="space-y-3 flex-1 pt-8">
+                            <ul class="text-xs space-y-1.5 text-on-surface-variant font-medium list-disc list-inside">
+                                <li>Metal Braces</li>
+                                <li>Clear Braces</li>
+                                <li>Invisible Aligners</li>
+                                <li>Jaw Alignment</li>
+                            </ul>
+                        </div>
+                        <div class="w-2/5 flex justify-end pt-8">
+                            <img src="real_teeth_alignment.png" alt="Teeth Alignment" class="w-full max-h-[100px] object-contain blend-image"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Gum Care -->
+                <div class="service-hover-card bg-white rounded-3xl p-6 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-4 min-h-[200px] cursor-pointer">
+                    <h3 class="card-title-text text-primary">Gum Care</h3>
+                    <div class="card-content-wrapper flex flex-row justify-between items-center w-full gap-4">
+                        <div class="space-y-3 flex-1 pt-8">
+                            <ul class="text-xs space-y-1.5 text-on-surface-variant font-medium list-disc list-inside">
+                                <li>Laser Gum Surgery</li>
+                                <li>Gum Disease Care</li>
+                                <li>Bleeding Gums</li>
+                            </ul>
+                        </div>
+                        <div class="w-2/5 flex justify-end pt-8">
+                            <img src="real_gum_care.png" alt="Gum Care" class="w-full max-h-[100px] object-contain blend-image"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Oral Surgery Care -->
+                <div class="service-hover-card bg-white rounded-3xl p-6 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-4 min-h-[200px] cursor-pointer">
+                    <h3 class="card-title-text text-primary">Oral Surgery Care</h3>
+                    <div class="card-content-wrapper flex flex-row justify-between items-center w-full gap-4">
+                        <div class="space-y-3 flex-1 pt-8">
+                            <ul class="text-xs space-y-1.5 text-on-surface-variant font-medium list-disc list-inside">
+                                <li>Laser Surgery</li>
+                                <li>Surgical Extraction</li>
+                                <li>Impacted Wisdom Tooth</li>
+                            </ul>
+                        </div>
+                        <div class="w-2/5 flex justify-end pt-8">
+                            <img src="real_oral_surgery.png" alt="Oral Surgery Care" class="w-full max-h-[100px] object-contain blend-image"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Advanced & Emergency Care -->
+                <div class="service-hover-card bg-white rounded-3xl p-6 hover-elevate border border-primary/5 shadow-sm flex flex-row justify-between items-center gap-4 min-h-[200px] cursor-pointer">
+                    <h3 class="card-title-text text-primary">Advanced & Emergency</h3>
+                    <div class="card-content-wrapper flex flex-row justify-between items-center w-full gap-4">
+                        <div class="space-y-3 flex-1 pt-8">
+                            <ul class="text-xs space-y-1.5 text-on-surface-variant font-medium list-disc list-inside">
+                                <li>Same-Day Consultation</li>
+                                <li>Dental Trauma Care</li>
+                                <li>Acute Pain Relief</li>
+                            </ul>
+                        </div>
+                        <div class="w-2/5 flex justify-end pt-8">
+                            <img src="real_advanced_care.png" alt="Advanced & Emergency Care" class="w-full max-h-[100px] object-contain blend-image"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Quick Consult Call out -->
+            <div class="mt-12 bg-surface-low rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-primary/5">
+                <div class="space-y-1">
+                    <h4 class="font-bold text-primary text-lg">Need Immediate Dental Consultation?</h4>
+                    <p class="text-sm text-on-surface-variant">We provide same-day emergency checks and painless diagnostics.</p>
+                </div>
+                <div class="flex gap-4 w-full md:w-auto">
+                    <a href="tel:08700706766" class="w-full md:w-auto text-center bg-secondary hover:bg-secondary/95 text-white font-bold py-3 px-6 rounded-lg uppercase text-sm tracking-wide shadow-md">
+                        Call Doctor Now
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Meet The Team / Dr. Swastik Saini -->
+    <section id="about-team" class="py-20 bg-primary text-white relative overflow-hidden reveal-on-scroll">
+        <!-- Floating decorative bubble bg -->
+        <div class="absolute -right-32 -bottom-32 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-32 -top-32 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-[1200px] mx-auto px-6">
+            
+            <div class="text-center mb-16 space-y-4">
+                <span class="text-secondary-fixed font-bold tracking-widest uppercase text-sm">Clinical Expertise You Can Trust</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold">Meet Our Specialist Dentist</h2>
+                <div class="w-16 h-1 bg-white/20 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <!-- Doctor Image Container with frame -->
+                <div class="md:col-span-5 relative group">
+                    <div class="absolute inset-4 bg-secondary rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="relative bg-white rounded-3xl p-3 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <img alt="Dr. Swastik Saini - Specialist Oro-Dental Surgeon" class="w-full rounded-2xl object-cover aspect-[4/5] object-top" src="dr_swastik_office.png"/>
+                    </div>
+                </div>
+
+                <!-- Doctor Details -->
+                <div class="md:col-span-7 space-y-6">
+                    <div class="space-y-2">
+                        <span class="bg-secondary/20 text-secondary-fixed border border-secondary/35 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">Dentist & Oro-Dental Surgeon</span>
+                        <h3 class="text-3xl md:text-4xl font-extrabold">Dr. Swastik Saini</h3>
+                        <p class="text-sm text-surface-container-high opacity-90 font-medium">B.D.S. (PGIMS-Rohtak), MIDA</p>
+                    </div>
+
+                    <p class="text-base text-surface-container-low leading-relaxed font-light">
+                        Dr. Swastik Saini is a highly skilled and experienced Oro-Dental Surgeon and Dentist. He completed his BDS from the prestigious **Post Graduate Institute of Dental Sciences (PGIMS), Rohtak**, one of India's premier government dental colleges. He is an active member of the Indian Dental Association (MIDA) and has over **6 years of overall experience** delivering exceptional dental care.
+                    </p>
+
+                    <!-- Achievements checklist -->
+                    <div class="space-y-4 border-t border-white/10 pt-6">
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary-fixed font-bold mt-1">check_circle</span>
+                            <div>
+                                <h4 class="font-bold text-white text-base">BDS, PGIMS-Rohtak</h4>
+                                <p class="text-xs text-surface-container-high opacity-80">Completed dental training and clinical residency from a top-ranked government institution.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary-fixed font-bold mt-1">check_circle</span>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Member of Indian Dental Association (MIDA)</h4>
+                                <p class="text-xs text-surface-container-high opacity-80">Active member adhering to standard medical and ethical protocols.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary-fixed font-bold mt-1">check_circle</span>
+                            <div>
+                                <h4 class="font-bold text-white text-base">6+ Years Overall Experience</h4>
+                                <p class="text-xs text-surface-container-high opacity-80">Specialized in advanced dental extractions, root canals, implants, and oral surgery procedures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#booking-form-anchor" class="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/95 text-white font-extrabold py-3 px-8 rounded-lg uppercase text-sm tracking-wide shadow-md transition-all">
+                            Consult with Dr. Swastik Saini
+                            <span class="material-symbols-outlined text-sm">calendar_month</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about-clinic" class="py-20 bg-white border-b border-primary/5 reveal-on-scroll">
+        <div class="max-w-[1200px] mx-auto px-6">
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-primary leading-tight">
+                        Bringing Clinical Brilliance to Your Smile!
+                    </h2>
+                    <div class="w-16 h-1 bg-secondary rounded-full"></div>
+                    
+                    <div class="space-y-4 text-on-surface-variant leading-relaxed">
+                        <p>
+                            Dedicated to your total oral hygiene, we offer everything from preventative checks to cosmetic aligners and surgery implants. We follow the highest standards of sterilization and patient comfort.
+                        </p>
+                        <p>
+                            Our experienced team led by Dr. Swastik Saini ensures your clinic visits are painless, clean, and highly effective. We focus on modern technology diagnostics.
+                        </p>
+                        <p>
+                            With state-of-the-art dental chairs, digital diagnostic scans, and customized cosmetic frameworks, you'll receive the finest clinical treatment in Hari Nagar Ashram, New Delhi.
+                        </p>
+                    </div>
+
+                    <!-- Highlighted features -->
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-primary/10">
+                        <div class="flex items-center gap-2 text-primary font-bold">
+                            <span class="material-symbols-outlined text-secondary">sanitizer</span>
+                            <span>100% Sterilized Room</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-primary font-bold">
+                            <span class="material-symbols-outlined text-secondary">medical_information</span>
+                            <span>Modern Digital Scans</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image Showcase column -->
+                <div class="relative">
+                    <!-- Glass Frame -->
+                    <div class="absolute -inset-4 bg-secondary/5 rounded-3xl blur-md"></div>
+                    <div class="relative bg-white rounded-3xl p-4 shadow-xl border border-primary/5">
+                        <img alt="Dr. Swastik Saini performing dental procedure" class="w-full rounded-2xl object-cover max-h-[420px] shadow-inner" src="gallery_procedure.png"/>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- 6. Patient Reviews / Testimonials Section -->
+    <section id="reviews" class="py-20 bg-background reveal-on-scroll">
+        <div class="max-w-[1200px] mx-auto px-6">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-4">
+                    <span class="text-secondary font-bold tracking-widest uppercase text-sm">Verified Patient Reviews</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-primary">Patient Stories</h2>
+                    <div class="w-16 h-1 bg-secondary rounded-full"></div>
+                </div>
+                <!-- Action controls -->
+                <div class="flex gap-4 items-center">
+                    <button id="add-review-btn" class="bg-secondary/10 hover:bg-secondary/15 text-secondary font-extrabold py-3 px-6 rounded-lg text-sm uppercase tracking-wide flex items-center gap-2">
+                        <span class="material-symbols-outlined">rate_review</span>
+                        Write a Review
+                    </button>
+                    <div class="flex gap-2">
+                        <button id="btn-review-prev" class="w-10 h-10 rounded-full border border-primary/10 flex items-center justify-center text-primary bg-white hover:bg-surface-low transition-colors" aria-label="Previous Review">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button id="btn-review-next" class="w-10 h-10 rounded-full border border-primary/10 flex items-center justify-center text-primary bg-white hover:bg-surface-low transition-colors" aria-label="Next Review">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Main Box layout -->
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Summary left column -->
+                <div class="lg:col-span-3 bg-primary text-white rounded-3xl p-8 flex flex-col justify-between text-center shadow-lg">
+                    <div class="space-y-4">
+                        <div class="text-xl font-bold uppercase tracking-wider text-surface-container-high opacity-90">Excellent</div>
+                        <div class="text-5xl font-extrabold">4.9</div>
+                        <!-- Stars -->
+                        <div class="flex justify-center gap-1 text-amber-400">
+                            <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <div class="text-xs text-surface-container-high opacity-80 font-medium">Based on 126 Google Reviews</div>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex flex-col items-center justify-center gap-1.5">
+                        <div class="flex items-center gap-2 text-white bg-white/5 px-3 py-1.5 rounded-full border border-white/10 shadow-inner">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                            </svg>
+                            <span class="text-xs font-bold uppercase tracking-wider text-white">Verified Business</span>
+                        </div>
+                        <div class="text-[10px] text-white/50 uppercase tracking-widest font-semibold">Google Review Partner</div>
+                    </div>
+                </div>
+
+                <!-- Slider track column right -->
+                <div class="lg:col-span-9 carousel-viewport">
+                    <div id="reviews-track" class="carousel-track h-full">
+                        
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary/5 h-full flex flex-col justify-between hover:shadow-md transition-shadow">
+                                <div>
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xl">S</div>
+                                            <div>
+                                                <div class="font-bold text-primary">Sumit Raj</div>
+                                                <div class="text-xs text-on-surface-variant">10/05/2026</div>
+                                            </div>
+                                        </div>
+                                        <span class="material-symbols-outlined text-primary text-xl opacity-20">format_quote</span>
+                                    </div>
+                                    <div class="flex gap-0.5 text-amber-400 mb-3 items-center">
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-blue-500 text-sm ml-2">verified</span>
+                                    </div>
+                                    <p class="text-sm text-on-surface-variant leading-relaxed italic">
+                                        "Came here for a regular dental checkup. Dr. Swastik Saini is very professional and had a lot of patience. Guided me through the entire treatment process very well."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary/5 h-full flex flex-col justify-between hover:shadow-md transition-shadow">
+                                <div>
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-secondary to-primary flex items-center justify-center text-white font-bold text-xl">R</div>
+                                            <div>
+                                                <div class="font-bold text-primary">Ravi Singh</div>
+                                                <div class="text-xs text-on-surface-variant">09/05/2026</div>
+                                            </div>
+                                        </div>
+                                        <span class="material-symbols-outlined text-primary text-xl opacity-20">format_quote</span>
+                                    </div>
+                                    <div class="flex gap-0.5 text-amber-400 mb-3 items-center">
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-blue-500 text-sm ml-2">verified</span>
+                                    </div>
+                                    <p class="text-sm text-on-surface-variant leading-relaxed italic">
+                                        "Excellent experience. Very professional dental clinic, minimal waiting time, and painless treatment. Would definitely recommend The Tooth Clinic."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary/5 h-full flex flex-col justify-between hover:shadow-md transition-shadow">
+                                <div>
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xl">A</div>
+                                            <div>
+                                                <div class="font-bold text-primary">Ananya Sharma</div>
+                                                <div class="text-xs text-on-surface-variant">22/04/2026</div>
+                                            </div>
+                                        </div>
+                                        <span class="material-symbols-outlined text-primary text-xl opacity-20">format_quote</span>
+                                    </div>
+                                    <div class="flex gap-0.5 text-amber-400 mb-3 items-center">
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span class="material-symbols-outlined text-blue-500 text-sm ml-2">verified</span>
+                                    </div>
+                                    <p class="text-sm text-on-surface-variant leading-relaxed italic">
+                                        "Dr. Swastik Saini took extreme care with my root canal surgery. The treatment was painless and the results are amazing. Five stars!"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Review Form Modal (Popup) -->
+    <div id="review-modal" class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 md:p-8 shadow-2xl border border-primary/10 relative">
+            <button id="close-review-modal" class="absolute top-4 right-4 text-primary opacity-60 hover:opacity-100">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+            <h3 class="text-xl font-bold text-primary mb-6">Write a Review</h3>
+            
+            <form id="submit-review-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-primary uppercase mb-2">Your Name</label>
+                    <input id="review-user-name" class="w-full bg-background border border-primary/10 rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-secondary transition-all" placeholder="Enter name" type="text" required/>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-primary uppercase mb-2">Rating</label>
+                    <div class="flex gap-2 star-rating-select text-2xl text-amber-400">
+                        <span class="cursor-pointer material-symbols-outlined" data-value="1" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="cursor-pointer material-symbols-outlined" data-value="2" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="cursor-pointer material-symbols-outlined" data-value="3" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="cursor-pointer material-symbols-outlined" data-value="4" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="cursor-pointer material-symbols-outlined" data-value="5" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-primary uppercase mb-2">Review Content</label>
+                    <textarea id="review-user-text" class="w-full bg-background border border-primary/10 rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-secondary transition-all h-24" placeholder="How was your experience?" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-primary/95 text-white font-bold py-3 rounded-lg uppercase text-sm tracking-wide shadow-md mt-4">
+                    Submit Review
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 7. Gallery Section -->
+    <section id="gallery" class="py-20 bg-white border-y border-primary/5 reveal-on-scroll">
+        <div class="max-w-[1200px] mx-auto px-6">
+            
+            <div class="text-center mb-16 space-y-4">
+                <span class="text-secondary font-bold tracking-widest uppercase text-sm">Sterilized & Comfortable Ambience</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-primary">Clinic Photo Gallery</h2>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Image 1 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="Modern Sterile Treatment Room" class="w-full h-full object-cover" src="interior_bright.png"/>
+                </div>
+                <!-- Image 2 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="The Tooth Clinic Entrance Glass Door reflection" class="w-full h-full object-cover" src="interior_dark.png"/>
+                </div>
+                <!-- Image 3 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="The Tooth Clinic Storefront" class="w-full h-full object-cover" src="storefront.png"/>
+                </div>
+                <!-- Image 4 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="Dr. Swastik Saini and assistant at The Tooth Clinic" class="w-full h-full object-cover" src="gallery_patient_treatment.png"/>
+                </div>
+                <!-- Image 5 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="Happy smile transformation after full implant treatment" class="w-full h-full object-cover" src="gallery_happy_man.png"/>
+                </div>
+                <!-- Image 6 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="Before and After Teeth Whitening Smile Correction" class="w-full h-full object-cover" src="gallery_before_after_whitening.png"/>
+                </div>
+                <!-- Image 7 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="Dr. Swastik Saini - Specialist Prosthodontist & Implantologist" class="w-full h-full object-cover" src="gallery_doctor_headshot.png"/>
+                </div>
+                <!-- Image 8 -->
+                <div class="aspect-square rounded-2xl gallery-zoom shadow-md border border-primary/5 bg-surface-low">
+                    <img alt="Dentist performing dental procedure" class="w-full h-full object-cover" src="gallery_procedure.png"/>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. Timing & Schedule details section -->
+    <section class="py-16 bg-background px-6 reveal-on-scroll">
+        <div class="max-w-[800px] mx-auto bg-white rounded-3xl p-8 md:p-12 text-center shadow-lg border border-primary/5 space-y-6">
+            <h2 class="text-3xl font-extrabold text-primary tracking-tight">The Tooth Clinic Hours</h2>
+            <div class="w-12 h-1 bg-secondary mx-auto rounded-full"></div>
+            <p class="text-xl font-semibold text-primary">
+                Monday to Sunday: <span class="text-secondary font-extrabold">9:00 AM – 10:00 PM</span>
+            </p>
+            <p class="text-sm text-on-surface-variant leading-relaxed max-w-md mx-auto">
+                Open 7 days a week, including national holidays for specialized emergency surgeries in Hari Nagar Ashram, New Delhi.
+            </p>
+            <div class="pt-4">
+                <a href="#booking-form-anchor" class="bg-primary hover:bg-primary/95 text-white font-extrabold py-3.5 px-10 rounded-lg uppercase text-sm tracking-widest shadow-md transition-all">
+                    Book An Appointment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Location map and directions section -->
+    <section id="location" class="relative h-[550px] w-full flex items-center justify-center reveal-on-scroll">
+        <!-- Background map texture style -->
+        <div class="absolute inset-0 grayscale contrast-125 brightness-50 z-0">
+            <img alt="Map background overlay" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjOk8oi0DeggguzFsgb7R_rd0Q1P3IxHml6UX_T6dT0DuDdQV0ogpFWTU-iBT658yFRSvyTMM4Rg3XsNBhIFSplSPA0ApN8ND1fwvqDSCh1MMLMqOsUz3oyEBPVGLJb9Amn0SNUXFKhQavo8FCDLf3SwBCQQNu0X6bdSmzMbe8qm3W2tMExCeIeb_TRHurEjciQeDgIEmlB5DLNFPkMi-Z8fUfEx0Wibkk5nRqAh4x4ZLQK2bqU"/>
+        </div>
+        <div class="absolute inset-0 bg-primary/45 backdrop-blur-[1px] z-10"></div>
+        
+        <div class="relative z-20 max-w-[800px] mx-auto w-full px-6 flex flex-col items-center justify-center text-center text-white space-y-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Visit The Clinic</h2>
+            <div class="w-16 h-1 bg-white/20 rounded-full mx-auto"></div>
+            
+            <div class="space-y-6 max-w-md mx-auto">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary-fixed text-3xl">pin_drop</span>
+                    <p class="text-base opacity-90 leading-relaxed font-light">
+                        Number 2, Shop no.6, Sunlight Colony no.2,<br/>Near Sukh Saroj Jewellers, Hari Nagar Ashram,<br/>Sunlight Colony, New Delhi, Delhi 110014
+                    </p>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary-fixed text-2xl">call</span>
+                    <span class="text-xl font-bold">087007 06766</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer Section -->
+    <footer class="bg-primary text-white border-t border-white/5 relative overflow-hidden">
+        
+        <div class="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Branding block -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-white text-3xl">dentistry</span>
+                    <span class="text-xl font-extrabold uppercase tracking-tighter">The Tooth Clinic</span>
+                </div>
+                <p class="text-xs text-surface-container-high opacity-85 leading-relaxed">
+                    Modern clinical hygiene prosthodontist center dedicated to aesthetic alignments, whitening, implants, and same-day dental emergency surgeries in Ashram, New Delhi.
+                </p>
+            </div>
+
+            <!-- Timings / Status summary -->
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold uppercase tracking-wider text-secondary-fixed">Active Timing</h4>
+                <div class="space-y-1 text-xs text-surface-container-high opacity-85">
+                    <p class="font-bold text-white">Monday to Sunday</p>
+                    <p>9:00 AM – 10:00 PM</p>
+                    <p class="mt-2 text-secondary-fixed font-semibold" id="clinic-status-footer">Open Today</p>
+                </div>
+            </div>
+
+            <!-- Quick Contacts -->
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold uppercase tracking-wider text-secondary-fixed">Dental Helpline</h4>
+                <div class="space-y-2 text-xs text-surface-container-high opacity-85">
+                    <p class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">call</span>
+                        <a href="tel:08700706766" class="hover:underline">087007 06766</a>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">mail</span>
+                        <a href="mailto:thetoothclinics@gmail.com" class="hover:underline">thetoothclinics@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 py-6 px-6 bg-primary/80">
+            <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-surface-container-high opacity-70">
+                <p>Copyright © 2026 The Tooth Clinic. All Rights Reserved.</p>
+                <p>Powered by VERTEX.DIGITAL</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Back to top floating button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 w-11 h-11 bg-white border border-primary/10 text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-surface-low transition-all opacity-0 pointer-events-none z-30" aria-label="Back to top">
+        <span class="material-symbols-outlined font-bold">arrow_upward</span>
+    </button>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="gallery-lightbox" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col items-center justify-center p-4 transition-all duration-300 opacity-0">
+        <!-- Close button -->
+        <button id="close-lightbox" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10" aria-label="Close Lightbox">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        
+        <!-- Lightbox Content Container -->
+        <div class="relative max-w-4xl w-full flex flex-col items-center gap-4">
+            <!-- Navigation arrows -->
+            <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors hidden md:flex" aria-label="Previous image">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors hidden md:flex" aria-label="Next image">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+
+            <!-- Image Frame -->
+            <div class="bg-white/5 p-2 rounded-3xl border border-white/10 shadow-2xl overflow-hidden max-h-[75vh] max-w-full flex items-center justify-center">
+                <img id="lightbox-img" src="" alt="" class="max-h-[70vh] max-w-full rounded-2xl object-contain shadow-inner select-none transition-transform duration-300 scale-95"/>
+            </div>
+
+            <!-- Description Caption -->
+            <div class="text-center px-4 max-w-xl">
+                <p id="lightbox-caption" class="text-white font-medium text-sm md:text-base leading-relaxed tracking-wide"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Script logic -->
+    <script src="app.js"></script>
+</body>
+</html>

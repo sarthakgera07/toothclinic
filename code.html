@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Tooth Clinic | Modern Dental Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tooth-pattern {
+            background-color: #fdfaf5;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c-5 0-9 4-9 9 0 2 1 4 2 5-1 1-2 2-2 4 0 5 4 9 9 9s9-4 9-9c0-2-1-3-2-4 1-1 2-3 2-5 0-5-4-9-9-9zm0 2c3.9 0 7 3.1 7 7 0 1.5-.5 2.8-1.4 3.9-.9 1.1-1.6 2.5-1.6 4.1 0 2.8-2.2 5-5 5s-5-2.2-5-5c0-1.6-.7-3-1.6-4.1-.9-1.1-1.4-2.4-1.4-3.9 0-3.9 3.1-7 7-7z' fill='%2300355f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#78f5fc",
+                      "inverse-primary": "#a0c9ff",
+                      "surface-container-high": "#dee8ff",
+                      "on-primary-fixed-variant": "#07497d",
+                      "inverse-surface": "#263142",
+                      "surface-bright": "#f9f9ff",
+                      "outline-variant": "#c2c7d1",
+                      "on-secondary-fixed-variant": "#004f53",
+                      "surface-variant": "#d8e3fa",
+                      "on-tertiary-fixed-variant": "#404849",
+                      "surface-dim": "#cfdaf1",
+                      "on-surface-variant": "#42474f",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#bfc8c9",
+                      "surface-container-low": "#f0f3ff",
+                      "secondary-container": "#75f2f9",
+                      "primary-fixed": "#d2e4ff",
+                      "outline": "#727780",
+                      "tertiary-fixed": "#dbe4e5",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#151d1e",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#0f4c81",
+                      "surface-tint": "#2d6197",
+                      "inverse-on-surface": "#ebf1ff",
+                      "tertiary": "#2d3536",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#434c4d",
+                      "on-background": "#111c2c",
+                      "secondary": "#00696e",
+                      "on-secondary-fixed": "#002021",
+                      "surface": "#f9f9ff",
+                      "on-tertiary-container": "#b3bcbd",
+                      "on-surface": "#111c2c",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#006e72",
+                      "primary": "#00355f",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#e7eeff",
+                      "on-primary-fixed": "#001c37",
+                      "secondary-fixed-dim": "#58d8df",
+                      "surface-container-highest": "#d8e3fa",
+                      "on-primary-container": "#8ebdf9",
+                      "primary-fixed-dim": "#a0c9ff",
+                      "background": "#f9f9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "base": "8px",
+                      "stack-md": "16px",
+                      "margin-desktop": "40px",
+                      "container-max": "1200px",
+                      "gutter": "24px",
+                      "stack-lg": "32px",
+                      "margin-mobile": "16px",
+                      "section-gap": "80px"
+              },
+              "fontFamily": {
+                      "label-xs": ["Inter"],
+                      "headline-xl-mobile": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "label-xs": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Header -->
+<nav class="fixed top-0 left-0 right-0 bg-[#fdfaf5] z-50 px-4 md:px-10 h-20 flex justify-between items-center border-b border-primary/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="dentistry">dentistry</span>
+<div class="flex flex-col -gap-1">
+<span class="text-xl font-bold text-primary leading-tight uppercase tracking-tighter">The Tooth</span>
+<span class="text-sm font-medium text-on-surface-variant leading-tight tracking-widest uppercase">Clinic</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">call</span>
+<span class="font-bold">958-282-8500</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm uppercase tracking-wide">Instant Call Back</button>
+</div>
+<button class="md:hidden material-symbols-outlined text-primary text-3xl">menu</button>
+</nav>
+<!-- 1. Hero Section (Ref: IMAGE_9) -->
+<header class="relative pt-20 overflow-hidden tooth-pattern">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="font-headline-xl text-primary text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Our Treatment is always in <span class="text-primary/70 italic">sync</span> with your needs
+            </h1>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+                Unlock your smile's true potential with The Tooth Clinic where expertise meets excellence.
+            </p>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-lg uppercase tracking-wider shadow-xl hover:bg-primary/90 transition-all">
+                Book Appointment Now
+            </button>
+</div>
+<div class="relative">
+<div class="bg-primary rounded-3xl p-8 md:p-10 shadow-2xl">
+<form class="space-y-6">
+<input class="w-full bg-white border-none rounded-lg p-4 text-on-surface placeholder:text-outline/60 focus:ring-2 focus:ring-secondary-fixed transition-all" placeholder="Full Name (Required)" type="text"/>
+<input class="w-full bg-white border-none rounded-lg p-4 text-on-surface placeholder:text-outline/60 focus:ring-2 focus:ring-secondary-fixed transition-all" placeholder="Email Address (Optional)" type="email"/>
+<div class="flex items-center gap-2 bg-white rounded-lg p-4">
+<span class="text-xl">🇮🇳</span>
+<input class="w-full border-none p-0 focus:ring-0 text-on-surface placeholder:text-outline/60" placeholder="Phone Number (Required)" type="tel"/>
+</div>
+<button class="w-full bg-[#e6b400] text-primary font-bold py-4 rounded-lg text-lg uppercase tracking-widest shadow-lg hover:brightness-105 transition-all">
+                        Book an Appointment
+                    </button>
+</form>
+<p class="text-xs text-on-primary/60 mt-6 text-center leading-relaxed">
+                    By clicking Submit you agree to be contacted by The Tooth Clinic over Phone or SMS/WhatsApp/Email.
+                </p>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. Features/Value Prop (Ref: IMAGE_14) -->
+<section class="bg-background py-12 px-margin-mobile">
+<div class="max-w-[1200px] mx-auto bg-primary rounded-[2rem] py-12 px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-on-primary">
+<div>
+<div class="text-4xl md:text-5xl font-bold mb-2">10+</div>
+<div class="text-sm opacity-80 font-medium uppercase tracking-wider">Years of Experience</div>
+</div>
+<div>
+<div class="text-4xl md:text-5xl font-bold mb-2">1,000+</div>
+<div class="text-sm opacity-80 font-medium uppercase tracking-wider">Happy Patients</div>
+</div>
+<div>
+<div class="text-4xl md:text-5xl font-bold mb-2">15+</div>
+<div class="text-sm opacity-80 font-medium uppercase tracking-wider">Dental Services</div>
+</div>
+<div>
+<div class="text-4xl md:text-5xl font-bold mb-2">5/5</div>
+<div class="text-sm opacity-80 font-medium uppercase tracking-wider">Rated on Google</div>
+</div>
+</div>
+</section>
+<!-- 3. Patient Reviews (Ref: IMAGE_7) -->
+<section class="py-section-gap">
+<div class="bg-primary py-16 mb-[-120px]">
+<div class="max-w-[1200px] mx-auto text-center">
+<h2 class="text-headline-xl text-on-primary font-bold">Patient Stories</h2>
+<div class="w-20 h-1 bg-white/20 mx-auto mt-6"></div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-margin-mobile overflow-x-auto">
+<div class="bg-[#fff8ee] rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-lg min-w-max md:min-w-0">
+<!-- Summary -->
+<div class="text-center md:border-r border-primary/10 md:pr-12">
+<div class="text-2xl font-bold text-primary mb-4 uppercase tracking-tighter">Excellent</div>
+<div class="flex justify-center gap-1 text-[#ffb400] mb-2">
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="text-sm text-on-surface-variant font-medium">Based on <span class="font-bold">88 reviews</span></div>
+<img alt="Google" class="h-6 mx-auto mt-4 opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb386ZiKSLIrePch9wnevk-GCx7zk9eLW-7OhyCmlTa1YsSFZFY6fN2PPrYjwXY9lk2d9yNzD0PVNDTqzCC4sE5Sm7HHykEaoLdE8hgU1UozFXWGvwuvNWaBO6K_KtVVOmmwZmUwrBkavuXnT2s7nk2tLNe-RDq7gPhPu9YDYHcvI9LvLRj28gIfLA7zfx_BEWVK81hwrVNH63n6jSmndiHWSpCVTVK5bKZwoVmidl-CCWFsZdk_4"/>
+</div>
+<!-- Cards -->
+<div class="flex gap-6 flex-1">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-primary/5 max-w-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xl">S</div>
+<div>
+<div class="font-bold text-primary">Sumit Raj</div>
+<div class="text-xs text-on-surface-variant">10/05/2026</div>
+</div>
+</div>
+<img alt="G" class="h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbSgsHW-TKCsdUqdePzPfcrJLzqFc0wTuo56763TMx6-9iEXb0iEFuzlCGk-YluwYaSR-N9xb6lKn_C-y-2bed8XlRG6cPqDi5fJsG5qJK7e21KI7ILkSTn2_zykl3k3zh5mtW1fAUdfrZ8Tol1Lpgb1Q1Ar_8lpwXAxw3ubB0qKnXRBJtLVsVZYGFcbHGlZQQ2ZSDaVZPXyIB72LLS-8Vvt4um1oCyVNvDSyaCf9hR7eMOJZJCtw"/>
+</div>
+<div class="flex gap-0.5 text-[#ffb400] mb-3">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-blue-500 text-sm ml-2">verified</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Came here for a regular checkup. The doctor is very professional and had a lot of patience. Guided me through the entire process very well.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-primary/5 max-w-sm hidden md:block">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCi4Me8r9Ie6fwEW4Z2cPcSywxQ8hV-vYdlFAz6jdsHu0NnUKtPZahCt3dJXLWh4DdP-5Wg3DEdnxwMD3lHYrQ81DmGlqXjk1MZWthV6dU3C8-BgO5k4WV4Jy4GIjKYzSbgFFKooYDhGQQuJ_qooIg-knQmNq9yK6WMSMJaC2oN2BeKTRu2F7hyypy9W8EY5ZAk7J7yZSdcFxnJEQIngbma1fN1eW5sjB5XF7GD44ys5xYd8mpgAs')"></div>
+<div>
+<div class="font-bold text-primary">Ravi Singh</div>
+<div class="text-xs text-on-surface-variant">09/05/2026</div>
+</div>
+</div>
+<img alt="G" class="h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhvnWkl_hjpKmhl_vtft1Fk_hWJH0yLTQiiA2JneMNXd1kvmcc7r9q1bOGE5L3SqsBgMl4xwAbkcO4of7NTumZpGzCANlfNWNyMfFLnjYZD6S8LzX5Zs4_pA-OYPCCGkkjYkZRGXm0nBpRysR7RFlx76YcsTt4TgMnJTNNPTMP3aZUVG0kxvYjUX9sdlnfncm6fkhJfVaSSudiQCucoMID3mfsNmErnlvHFGRYpoRNMjohjQSIta8"/>
+</div>
+<div class="flex gap-0.5 text-[#ffb400] mb-3">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-blue-500 text-sm ml-2">verified</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Excellent experience. Very professional doctor, minimal waiting time, and painless treatment. Would definitely recommend.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Available Treatments (Ref: IMAGE_12) -->
+<section class="py-section-gap">
+<div class="max-w-[1200px] mx-auto px-margin-mobile text-center">
+<h2 class="text-headline-xl text-primary font-bold mb-4">Dental Treatments at The Tooth Clinic</h2>
+<div class="w-16 h-0.5 bg-blue-200 mx-auto mb-16"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white border border-primary/10 rounded-2xl p-12 hover:shadow-xl transition-all group">
+<div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl group-hover:scale-110 transition-transform">dentistry</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Teeth Whitening</h3>
+</div>
+<div class="bg-white border border-primary/10 rounded-2xl p-12 hover:shadow-xl transition-all group">
+<div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl group-hover:scale-110 transition-transform">medical_services</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Dental Implants</h3>
+</div>
+<div class="bg-white border border-primary/10 rounded-2xl p-12 hover:shadow-xl transition-all group">
+<div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl group-hover:scale-110 transition-transform">orthodontics</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Dental Braces</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. About the Team (Ref: IMAGE_5) -->
+<section class="bg-primary py-section-gap">
+<div class="max-w-[1200px] mx-auto px-margin-mobile">
+<div class="text-center mb-16">
+<p class="text-on-primary/60 font-medium uppercase tracking-widest mb-2">Meet our amazing team</p>
+<h2 class="text-3xl md:text-5xl font-bold text-on-primary">A Team of skilled and experienced dentists</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="rounded-2xl overflow-hidden shadow-2xl">
+<img alt="Dr. Dolly Gupta" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCi4Me8r9Ie6fwEW4Z2cPcSywxQ8hV-vYdlFAz6jdsHu0NnUKtPZahCt3dJXLWh4DdP-5Wg3DEdnxwMD3lHYrQ81DmGlqXjk1MZWthV6dU3C8-BgO5k4WV4Jy4GIjKYzSbgFFKooYDhGQQuJ_qooIg-knQmNq9yK6WMSMJaC2oN2BeKTRu2F7hyypy9W8EY5ZAk7J7yZSdcFxnJEQIngbma1fN1eW5sjB5XF7GD44ys5xYd8mpgAs"/>
+</div>
+<div class="text-on-primary">
+<h3 class="text-4xl font-bold mb-6">Dr. Dolly Gupta</h3>
+<p class="text-on-primary/80 leading-relaxed mb-8">
+                    Dr. Dolly Gupta completed her BDS from Manipal University, Mangalore, in 2013. She later pursued her MDS in Prosthodontics and Crown &amp; Bridge from KLE Vishwanath Katti Institute of Dental Sciences, Belgaum. Alongside her post-graduation, she also completed a Fellowship in Implantology from the same institution.
+                </p>
+<div class="space-y-6">
+<div>
+<div class="font-bold text-lg uppercase tracking-wider mb-1">BDS, Manipal University</div>
+<div class="opacity-60 text-sm">Bachelor of Dental Surgery</div>
+</div>
+<div>
+<div class="font-bold text-lg uppercase tracking-wider mb-1">MDS Prosthodontics</div>
+<div class="opacity-60 text-sm">KLE University, Silver Medalist</div>
+</div>
+<div>
+<div class="font-bold text-lg uppercase tracking-wider mb-1">Certified Implantologist</div>
+<div class="opacity-60 text-sm">10+ Years of Experience</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Call Back Option (Ref: IMAGE_10) -->
+<section class="py-16 bg-background">
+<div class="max-w-[1200px] mx-auto px-margin-mobile text-center">
+<p class="text-primary font-bold mb-6 tracking-widest uppercase text-sm">Talk to an Expert</p>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-lg uppercase tracking-widest flex items-center gap-4 mx-auto shadow-xl hover:scale-105 transition-all">
+<span class="material-symbols-outlined">call</span>
+            Instant Call Back
+        </button>
+<div class="mt-16 text-center">
+<h2 class="text-5xl font-bold text-primary mb-4">Dental Treatments</h2>
+<div class="w-20 h-0.5 bg-blue-200 mx-auto"></div>
+</div>
+</div>
+</section>
+<!-- 7. About the Clinic (Ref: IMAGE_15) -->
+<section class="py-section-gap tooth-pattern">
+<div class="max-w-[1200px] mx-auto px-margin-mobile">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-bold text-primary">About The Tooth Clinic</h2>
+<div class="w-16 h-0.5 bg-blue-200 mx-auto mt-6"></div>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+<img alt="Clinic Interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjOk8oi0DeggguzFsgb7R_rd0Q1P3IxHml6UX_T6dT0DuDdQV0ogpFWTU-iBT658yFRSvyTMM4Rg3XsNBhIFSplSPA0ApN8ND1fwvqDSCh1MMLMqOsUz3oyEBPVGLJb9Amn0SNUXFKhQavo8FCDLf3SwBCQQNu0X6bdSmzMbe8qm3W2tMExCeIeb_TRHurEjciQeDgIEmlB5DLNFPkMi-Z8fUfEx0Wibkk5nRqAh4x4ZLQK2bqU"/>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-primary mb-6">Bringing Brilliance to Your Smile!</h3>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<p>Dedicated to your oral health, we offer everything from preventive care to cosmetic enhancements, ensuring a holistic approach to your dental journey.</p>
+<p>Our experienced team is here to make your visits comfortable and effective, bringing you closer to the smile you've always wanted.</p>
+<p>We specialize in comprehensive dental care, combining advanced technology with expert techniques to enhance your smile. With a focus on patient comfort and satisfaction.</p>
+</div>
+<button class="mt-10 bg-primary text-on-primary px-8 py-3 rounded-lg font-bold uppercase tracking-widest shadow-lg">Instant Call Back</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Location/Map (Ref: IMAGE_8) -->
+<section class="relative h-[600px] w-full flex items-center justify-center">
+<div class="absolute inset-0 grayscale contrast-125 brightness-50">
+<img alt="Map Overlay" class="w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjOk8oi0DeggguzFsgb7R_rd0Q1P3IxHml6UX_T6dT0DuDdQV0ogpFWTU-iBT658yFRSvyTMM4Rg3XsNBhIFSplSPA0ApN8ND1fwvqDSCh1MMLMqOsUz3oyEBPVGLJb9Amn0SNUXFKhQavo8FCDLf3SwBCQQNu0X6bdSmzMbe8qm3W2tMExCeIeb_TRHurEjciQeDgIEmlB5DLNFPkMi-Z8fUfEx0Wibkk5nRqAh4x4ZLQK2bqU"/>
+</div>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+<div class="relative z-10 max-w-[1200px] mx-auto w-full px-margin-mobile grid lg:grid-cols-2 gap-12">
+<div class="bg-white rounded-2xl p-4 shadow-2xl overflow-hidden aspect-video lg:aspect-auto">
+<iframe allowfullscreen="" class="w-full h-full border-none rounded-xl" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.584347710313!2d77.2370!3d28.5355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDMyJzA3LjgiTiA3N8KwMTQnMTMuMiJF!5e0!3m2!1sen!2sin!4v1634567890123"></iframe>
+</div>
+<div class="text-on-primary">
+<h2 class="text-4xl md:text-5xl font-bold mb-8">Book Your Appointment Today</h2>
+<div class="w-24 h-1 bg-white/30 mb-10"></div>
+<p class="text-xl mb-10 opacity-90 leading-relaxed max-w-md">Basement W, 29, Greater Kailash-1, W Block, New Delhi, Delhi, 110048</p>
+<div class="flex items-center gap-6 mb-12">
+<div class="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined">call</span>
+</div>
+<span class="text-2xl font-bold">9582 828 500</span>
+</div>
+<button class="bg-[#e6b400] text-primary px-10 py-4 rounded-lg font-bold text-lg uppercase tracking-widest shadow-xl hover:brightness-105 transition-all">Get Direction</button>
+</div>
+</div>
+</section>
+<!-- 9. Timing Info (Ref: IMAGE_13) -->
+<section class="py-20 bg-background px-margin-mobile">
+<div class="max-w-[1000px] mx-auto bg-white rounded-3xl p-10 md:p-20 text-center shadow-xl border border-primary/5">
+<h2 class="text-4xl font-bold text-primary mb-6 uppercase tracking-tighter">The Tooth Clinic</h2>
+<div class="w-12 h-0.5 bg-primary/20 mx-auto mb-10"></div>
+<p class="text-2xl font-medium text-primary mb-12">Monday to Sunday – 9am to 9pm</p>
+<button class="bg-primary text-on-primary px-12 py-4 rounded-lg font-bold text-lg uppercase tracking-widest shadow-lg hover:bg-primary/90 transition-all">Book An Appointment</button>
+</div>
+</section>
+<!-- 10. Photo Gallery (Ref: IMAGE_6) -->
+<section class="py-section-gap">
+<div class="max-w-[1200px] mx-auto px-margin-mobile">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjOk8oi0DeggguzFsgb7R_rd0Q1P3IxHml6UX_T6dT0DuDdQV0ogpFWTU-iBT658yFRSvyTMM4Rg3XsNBhIFSplSPA0ApN8ND1fwvqDSCh1MMLMqOsUz3oyEBPVGLJb9Amn0SNUXFKhQavo8FCDLf3SwBCQQNu0X6bdSmzMbe8qm3W2tMExCeIeb_TRHurEjciQeDgIEmlB5DLNFPkMi-Z8fUfEx0Wibkk5nRqAh4x4ZLQK2bqU"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLHUsVF9mIaHMH7-HqOytuYmwfqe9_69tCgH3zntBcaZtuBlseZGgRaXHWcrY2vQN2X2UzL5xe-DdqZFNfkJhh_S3h-XyvEtOp0t1lX-jeNgInzgWsPgfKAbhTfpb5XnVGaJmOQSPEImQq0bZre8qJ0oRn-Gckx_txCA0jzQ1rwGdFXcHHo8gosKgSIMMml2DP9X4c5ojyQHfTNH3sTYrx4Th6n2pdVtFcEMbqhFW1zFkipzLJAHA"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAxpD0QpEkk2jHkLnZECzNrwWYV1sSFmCxemptWxuUijBT4CPvDqDEET3uHm1rMhmSTj954zBgVpDdB3wjJ358DNbi0sYU0o3rwPWT36_Wz-Jq1R4cDtyzHsJttsbcemaAXS9Ocr8eXD2MhlBlpOz3IPxDPsmS83ET3aROZDDn33mKCd1OyKsp9JK2UlggPNcPqW4ndpU2LZg1lDh3Hkc7gN-VNck1ydwMRG9k9MpVubFEQqPIi-g"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlUrFz9xxZLJk8LzvhSJLHbph-OOn9odoY0SML--GAvnfUNij0UGm53LDgg_Ieev3zcDrj9KkE0cac5-nvTweIz1df6n3VDhu_Oj84fOCstcLlrkPfaYvUgks2Cs-q5n2LuU9Eh-lBCj5m-JnRGE6wN-xFoxhOCWD0ydOfgcNNrwqwtWxcNPjfyVtJKPwnLtbzCZSqp_GNgCh_2p-YFVwbgeD0jpX-3370006H5pJbuvgmHO2RiiA"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT61GuknXxax060vRO9K1UwrHvCuX6J1erAtae0d0it94_dkMl147NE4DAnUGW0IxMRg4reyInRm9_SKuRHBX5EMmvzZPZPLfKqyr-xIWxD_KlUYLT2rBEmA9tYpnHkib09yHRDNRGoQf4d5JgfQNaq6F_X41ZOg4uoweA5uE4Vjy8rzzD31BvFDeRcEsVpM3lh8ELQyUvtZofefdFsXqwMUmAPWtPCr6N-g0ux-fmUwHw0TCzxvg"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjOk8oi0DeggguzFsgb7R_rd0Q1P3IxHml6UX_T6dT0DuDdQV0ogpFWTU-iBT658yFRSvyTMM4Rg3XsNBhIFSplSPA0ApN8ND1fwvqDSCh1MMLMqOsUz3oyEBPVGLJb9Amn0SNUXFKhQavo8FCDLf3SwBCQQNu0X6bdSmzMbe8qm3W2tMExCeIeb_TRHurEjciQeDgIEmlB5DLNFPkMi-Z8fUfEx0Wibkk5nRqAh4x4ZLQK2bqU"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjOk8oi0DeggguzFsgb7R_rd0Q1P3IxHml6UX_T6dT0DuDdQV0ogpFWTU-iBT658yFRSvyTMM4Rg3XsNBhIFSplSPA0ApN8ND1fwvqDSCh1MMLMqOsUz3oyEBPVGLJb9Amn0SNUXFKhQavo8FCDLf3SwBCQQNu0X6bdSmzMbe8qm3W2tMExCeIeb_TRHurEjciQeDgIEmlB5DLNFPkMi-Z8fUfEx0Wibkk5nRqAh4x4ZLQK2bqU"/>
+</div>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-lg group">
+<img alt="Gallery" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUjOk8oi0DeggguzFsgb7R_rd0Q1P3IxHml6UX_T6dT0DuDdQV0ogpFWTU-iBT658yFRSvyTMM4Rg3XsNBhIFSplSPA0ApN8ND1fwvqDSCh1MMLMqOsUz3oyEBPVGLJb9Amn0SNUXFKhQavo8FCDLf3SwBCQQNu0X6bdSmzMbe8qm3W2tMExCeIeb_TRHurEjciQeDgIEmlB5DLNFPkMi-Z8fUfEx0Wibkk5nRqAh4x4ZLQK2bqU"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. Footer (Ref: IMAGE_11) -->
+<footer class="pt-0">
+<div class="bg-[#e6b400] py-16 px-margin-mobile text-center">
+<p class="text-primary font-bold mb-6 tracking-widest uppercase text-sm">Talk to an Expert</p>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-bold text-lg uppercase tracking-widest flex items-center gap-4 mx-auto shadow-xl hover:scale-105 transition-all">
+<span class="material-symbols-outlined">call</span>
+            Instant Call Back
+        </button>
+<div class="w-16 h-0.5 bg-primary/20 mx-auto mt-10"></div>
+</div>
+<div class="bg-[#fff8ee] py-8 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-primary/5">
+<p class="text-sm text-primary font-medium">Copyright © 2026 The Tooth Clinic. All Rights Reserved</p>
+<p class="text-sm text-primary font-medium">Powered by Likhyani Healthcare Solutions</p>
+</div>
+</footer>
+<!-- Floating Actions -->
+<div class="fixed bottom-6 left-6 z-50 flex flex-col gap-3">
+<button class="w-14 h-14 bg-[#e6b400] text-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-3xl">call</span>
+</button>
+<button class="w-14 h-14 bg-[#e6b400] text-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</button>
+</div>
+</body></html>
